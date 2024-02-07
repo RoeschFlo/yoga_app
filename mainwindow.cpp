@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     mainWindow_ptr(this)
 {
     ui->setupUi(this);
+    workout_ptr = nullptr;
 }
 
 MainWindow::~MainWindow()
@@ -20,7 +21,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pbtn_start_workout_clicked()
 {
+    if (workout_ptr==nullptr){
     workout_ptr = new Workout(nullptr, mainWindow_ptr);
+    }
     if (workout_ptr){
         workout_ptr->show();
         this->hide();}
