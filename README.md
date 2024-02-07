@@ -1,4 +1,6 @@
 # yoga_app
+Gerne auch in die anderen Branches schauen: 
+im "more_qt_based_approach" nutze ich vermehrt die Funktionalität von Qt und arbeiten weniger mit eigenen Lösungen.
 
 Hallo zusammen!
 Diese App ist eine Fitness/Wellness-App für Windows, die dem Benutzer hilft, Yoga zu trainieren.
