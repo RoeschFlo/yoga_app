@@ -1,4 +1,8 @@
 # yoga_app
+Der unterschied zum Main branch ist, dass ich hier versuche 
+mehr die Funktionen von Qt nutze anstatt selbst ein Wechsel
+zwischen verschiedenen Ansichten zu schreiben.
+
 
 Hallo zusammen!
 Diese App ist eine Fitness/Wellness-App für Windows, die dem Benutzer hilft, Yoga zu trainieren.

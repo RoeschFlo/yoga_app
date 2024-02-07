@@ -3,16 +3,16 @@
 
 #include <QMainWindow>
 #include <QErrorMessage>
-
-//Alle Klassen um Cicular Dependencies zu vermieden!
-#include "workout.h"
+//alle benötigten Klassen bzw. Ansichten
+#include <workout.h>
+#include <editor.h>
+#include <historie.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
 
 
-//Vorwärtsdeklaration
-class Workout;
+
 
 class MainWindow;
 }
@@ -27,19 +27,27 @@ public:
     ~MainWindow();
 private:
     Ui::MainWindow *ui;
-public:
-    MainWindow* mainWindow_ptr;
-    Workout* workout_ptr;
+
+    Workout workout_obj;
+    Editor editor_obj;
+    Historie historie_obj;
+
+
+    enum class Widget_Indexes:int{
+        mainwindow_index = 0,
+        workout_index = 1,
+        editor_index = 2,
+        historie_index = 3
+    };
+
 
 
 private slots:
+    void moveHome();
 
 
     void on_pbtn_start_workout_clicked();
-
-
-
-
-
+    void on_pbtn_editor_clicked();
+    void on_pbnt_historie_clicked();
 };
 #endif // MAINWINDOW_H
