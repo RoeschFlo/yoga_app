@@ -23,6 +23,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&workout_obj,
             SIGNAL(BackHome_signal()),
             this, SLOT(moveHome()));
+    connect(&editor_obj,
+            SIGNAL(BackHome_signal()),
+            this, SLOT(moveHome()));
+    connect(&historie_obj,
+            SIGNAL(BackHome_signal()),
+            this, SLOT(moveHome()));
 }
 
 MainWindow::~MainWindow()
