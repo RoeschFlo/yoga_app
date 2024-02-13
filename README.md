@@ -29,6 +29,10 @@ Hauptmenü:
 
 workout_file_handler:
 Die workouts werden serialisiert gespeichert und könne wieder geladen
-werden. 
+werden.
+ Der Workout file handler besitzt mehrer Helfer Klassen:
+ input dialog zum editieren und ergänzen von Übungen
+
+
 Funktionen: Speichern, Laden, Bearbeiten 
 
