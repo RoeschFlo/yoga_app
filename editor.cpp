@@ -30,6 +30,10 @@ void Editor::on_pbtn_save_exercises_clicked()
     if (ok) {
 
     }
+    for(const QString &str: list){
+        qDebug() << str ;
+
+    }
 }
 
 

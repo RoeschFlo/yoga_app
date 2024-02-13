@@ -2,6 +2,8 @@
 #define EXERCISE_INPUT_BOX_H
 
 #include <QDialog>
+#include <QValidator>
+#include <QRegularExpressionValidator>
 
 class QLineEdit;
 class QLabel;
@@ -16,6 +18,10 @@ public:
 
 private:
     QList<QLineEdit*> fields;
+    QLineEdit *tLine_name;
+    QValidator *validator_name;
+    QLineEdit *tLine_duration;
+    QValidator *validator_duration;
 };
 
 
