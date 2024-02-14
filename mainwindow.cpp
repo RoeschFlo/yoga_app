@@ -5,11 +5,30 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
-     ui(new Ui::MainWindow),
-    mainWindow_ptr(this)
+     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    workout_ptr = nullptr;
+    // Die Ansichten werden mit bestimmten Index eingefügt
+    ui->stackedWidget->insertWidget(
+        static_cast<int>(Widget_Indexes::workout_index),
+        &workout_obj);
+    ui->stackedWidget->insertWidget(
+        static_cast<int>(Widget_Indexes::editor_index),
+        &editor_obj);
+    ui->stackedWidget->insertWidget(
+        static_cast<int>(Widget_Indexes::historie_index),
+        &historie_obj);
+
+
+    connect(&workout_obj,
+            SIGNAL(BackHome_signal()),
+            this, SLOT(moveHome()));
+    connect(&editor_obj,
+            SIGNAL(BackHome_signal()),
+            this, SLOT(moveHome()));
+    connect(&historie_obj,
+            SIGNAL(BackHome_signal()),
+            this, SLOT(moveHome()));
 }
 
 MainWindow::~MainWindow()
@@ -19,19 +38,30 @@ MainWindow::~MainWindow()
 
 
 
+void MainWindow::moveHome()
+{
+    ui->stackedWidget->setCurrentIndex(
+        static_cast<int>(Widget_Indexes::mainwindow_index));
+}
+
+
 void MainWindow::on_pbtn_start_workout_clicked()
 {
-    if (workout_ptr==nullptr){
-    workout_ptr = new Workout(nullptr, mainWindow_ptr);
-    }
-    if (workout_ptr){
-        workout_ptr->show();
-        this->hide();}
-    // else{
-    //      QErrorMessage errorMessage;
-    //      errorMessage.showMessage("Heftiger Fehler!!!"
-    //                               "Null-Ptr Fehler");
-    //      errorMessage.exec();
-    // }
+    ui->stackedWidget->setCurrentIndex(
+        static_cast<int>(Widget_Indexes::workout_index));
+}
+
+
+void MainWindow::on_pbtn_editor_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(
+        static_cast<int>(Widget_Indexes::editor_index));
+}
+
+
+void MainWindow::on_pbnt_historie_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(
+        static_cast<int>(Widget_Indexes::historie_index));
 }
 
