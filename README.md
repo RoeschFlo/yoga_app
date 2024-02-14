@@ -1,7 +1,7 @@
 # yoga_app
-Der unterschied zum Main branch ist, dass ich hier versuche 
-mehr die Funktionen von Qt nutze anstatt selbst ein Wechsel
-zwischen verschiedenen Ansichten zu schreiben.
+
+Gerne auch in die anderen Branches schauen: 
+im "more_qt_based_approach" nutze ich vermehrt die Funktionalität von Qt und arbeiten weniger mit eigenen Lösungen.
 
 
 Hallo zusammen!
